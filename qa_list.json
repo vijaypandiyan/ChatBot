@@ -1,0 +1,41 @@
+    {
+    "qaset": [
+    [
+
+        "hi",
+        "Hello! How can I help you?"
+    ],
+    [
+        "hello",
+        "Hi! How can I help you?"
+    ],
+    [
+        "what is the url of facebook?",
+        "http://www.facebook.com"
+    ],
+    [
+        "what is the url of google?",
+        "http://maps.google.com"
+    ],
+    [
+        "where is google maps?",
+        "http://maps.google.com"
+    ],
+    [
+        "give me the link of gmail",
+        "http://www.gmail.com"
+    ],
+    [
+        "bye",
+        "Good Bye"
+    ],
+    [
+        "thank you",
+        "welcome"
+    ],
+    [
+        "thanks",
+        "welcome"
+    ]
+]
+}

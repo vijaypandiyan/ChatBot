@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{211de755-cbb0-45b7-a08f-b02f0b7e9c19}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <InterpreterId>{58c277fd-637f-4de2-969c-249a27b46c75}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Name>ChatBot</Name>
+    <NameOfLastUsedPublishProfile>ChatBotDevApps - Web Deploy</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\admin.py" />
+    <Compile Include="app\apps.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\nlp_utility.py" />
+    <Compile Include="app\sample_adapter.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="ChatBot\settings.py" />
+    <Compile Include="ChatBot\urls.py" />
+    <Compile Include="ChatBot\wsgi.py" />
+    <Compile Include="ChatBot\__init__.py" />
+    <Compile Include="chatbot_api\admin.py" />
+    <Compile Include="chatbot_api\apps.py" />
+    <Compile Include="chatbot_api\migrations\0001_initial.py" />
+    <Compile Include="chatbot_api\migrations\__init__.py" />
+    <Compile Include="chatbot_api\models.py" />
+    <Compile Include="chatbot_api\serializers.py" />
+    <Compile Include="chatbot_api\tests.py" />
+    <Compile Include="chatbot_api\views.py" />
+    <Compile Include="chatbot_api\__init__.py" />
+    <Compile Include="manage.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChatBotDevApps - Web Deploy.pubxml" />
+    <Content Include="requirements.txt" />
+    <Content Include="static\css\style.css" />
+    <Content Include="static\js\js.cookie.js" />
+    <Content Include="static\js\script.js" />
+    <Content Include="static\js\typed.js" />
+    <Content Include="templates\chat.html" />
+    <Content Include="templates\common.html" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\train.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app" />
+    <Folder Include="app\migrations" />
+    <Folder Include="ChatBot" />
+    <Folder Include="chatbot_api" />
+    <Folder Include="chatbot_api\migrations" />
+    <Folder Include="static\" />
+    <Folder Include="static\css" />
+    <Folder Include="static\js" />
+    <Folder Include="templates" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{58c277fd-637f-4de2-969c-249a27b46c75}\3.5" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63852/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>True</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

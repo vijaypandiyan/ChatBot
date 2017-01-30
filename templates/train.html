@@ -1,0 +1,80 @@
+{% extends "common.html" %}
+{% block title %}
+    <title>ChatBot | Train Bot</title>
+{% endblock %}
+{% block content %}
+	<div class="chat-box text-center">
+		<div class="chat-body-wrapper">
+			<span id="chat_reply"></span>
+		</div>
+		<div class="chat-text-wrapper container">
+			{% csrf_token %}
+			<textarea maxlength="244" class="chat-text" id="chat_text" placeholder="Enter your text here"></textarea>
+			<a class="btn btn-lg btn-success chat-btn" id="chat_btn" title="send" role="button"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i></a>
+      <a class="btn btn-lg btn-success chat-btn" id="learn_btn" title="send" role="button">Learn This</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$( function() {
+    		$( ".nav li.active" ).removeClass('active');
+    		$(".nav li:nth-of-type(2)").addClass('active');
+    		$("#chat_text").focus();
+  		} );
+
+  	  //var chatterbotUrl = '{% url "chatterbot:chatterbot" %}';
+      var chatterbotUrl = '{% url "feedlearn" %}';
+      var learningUrl = '{% url "feedlearn" %}';
+
+      var csrftoken = Cookies.get('csrftoken');
+
+      function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+
+      $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          }
+        }
+      });
+
+      headers =  {
+        Authorization: 'Token 907c7c8471891c6bfb094b5ade6cda338679f86c'
+      };
+
+      function submitInput() {
+
+        var inputData = {
+          'text': $("#chat_text").val()
+        };
+
+        var _submit = $.ajax({
+          type: 'POST',
+          url: chatterbotUrl,
+          data: JSON.stringify(inputData),
+          contentType: 'application/json',
+          headers: headers,
+          format: 'json'
+        });
+
+        _submit.done(function(statement) {
+            var _text = "For statement: "+statement.for_statement+" Outut is: "+statement.output_is;
+            typeWriter(_text, "#chat_reply");
+            // Clear the input field
+            $("#chat_text").val('').focus();
+        });
+
+        _submit.fail(function(response) {
+          console.log(response.responseText);
+        });
+
+      }
+
+      $("#chat_btn").click(function() {
+        submitInput();
+      });
+
+	</script>
+{% endblock %}
